@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Chatbot</title>
+    <style>
+        body { font-family: Arial, sans-serif; display: flex; justify-content: center; margin-top: 20px; }
+        #chat-container { width: 400px; max-width: 100%; border: 1px solid #ddd; padding: 10px; border-radius: 8px; }
+        .message { padding: 8px; margin: 4px 0; border-radius: 8px; }
+        .user { background-color: #daf7a6; text-align: right; }
+        .bot { background-color: #f0f0f0; }
+        #input-container { display: flex; margin-top: 10px; }
+        #input-field { flex: 1; padding: 8px; }
+        #send-button { padding: 8px; cursor: pointer; }
+        #voice-button { padding: 8px; cursor: pointer; background-color: #4CAF50; color: white; border: none; border-radius: 4px; }
+        #stop-button { padding: 8px; cursor: pointer; background-color: red; color: white; border: none; border-radius: 4px; display: none; }
+        .listening { animation: pulse 1s infinite; color: green; font-weight: bold; }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+<div id="chat-container">
+    <div id="chat"></div>
+    <div id="input-container">
+        <input type="text" id="input-field" placeholder="Ask a medical question...">
+        <button id="send-button">Send</button>
+        <button id="voice-button">🎤 Ask with Voice</button>
+        <button id="stop-button">Stop Recording</button>
+    </div>
+</div>
+
+<script>
+    const chatContainer = document.getElementById('chat');
+    const inputField = document.getElementById('input-field');
+    const sendButton = document.getElementById('send-button');
+    const voiceButton = document.getElementById('voice-button');
+    const stopButton = document.getElementById('stop-button');
+    const sessionId = Date.now();  // Unique ID for each session
+    let recognition;
+
+    // Function to send message to backend
+    async function sendMessage(userMessage) {
+        if (!userMessage) return;
+
+        // Display user's message in the chat
+        addMessageToChat(userMessage, 'user');
+
+        // Send the question to the backend
+        const response = await fetch('http://localhost:3000/ask', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ sessionId, question: userMessage })
+        });
+
+        const data = await response.json();
+        if (data.answer) {
+            addMessageToChat(data.answer, 'bot');
+        } else {
+            addMessageToChat('There was an issue with the response.', 'bot');
+        }
+    }
+
+    // Function to add messages to the chat
+    function addMessageToChat(message, sender) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${sender}`;
+        messageDiv.textContent = message;
+        chatContainer.appendChild(messageDiv);
+        chatContainer.scrollTop = chatContainer.scrollHeight;  // Scroll to bottom
+    }
+
+    // Function to start speech recognition
+    function startRecognition() {
+        recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+        recognition.lang = 'en-US';
+
+        // Start listening
+        recognition.start();
+
+        // Show listening animation
+        voiceButton.classList.add('listening');
+        stopButton.style.display = 'inline-block';  // Show stop button
+
+        recognition.onresult = (event) => {
+            const voiceInput = event.results[0][0].transcript;
+            console.log("Recognized text:", voiceInput);
+
+            // Automatically send the recognized voice input as a message
+            sendMessage(voiceInput);
+            stopRecognition();  // Automatically stop after recognition
+        };
+
+        recognition.onerror = (event) => {
+            console.error("Speech recognition error:", event.error);
+            stopRecognition();  // Stop if there's an error
+        };
+    }
+
+    // Function to stop speech recognition
+    function stopRecognition() {
+        if (recognition) {
+            recognition.stop();
+        }
+        voiceButton.classList.remove('listening');
+        stopButton.style.display = 'none';  // Hide stop button
+    }
+
+    // Button to trigger voice input
+    voiceButton.addEventListener('click', startRecognition);
+
+    // Button to manually stop the recording
+    stopButton.addEventListener('click', stopRecognition);
+
+    // Send message when the send button is clicked
+    sendButton.addEventListener('click', () => {
+        const userMessage = inputField.value.trim();
+        if (userMessage) {
+            sendMessage(userMessage);
+            inputField.value = '';  // Clear input field after sending message
+        }
+    });
+
+    // Send message when pressing Enter key
+    inputField.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            const userMessage = inputField.value.trim();
+            if (userMessage) {
+                sendMessage(userMessage);
+                inputField.value = '';  // Clear input field after sending message
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

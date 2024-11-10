@@ -1,0 +1,304 @@
+{
+  "doctors": [
+    {
+      "id": "MLD01",
+      "name": "Dr. Ravi Sharma",
+      "email": "ravisharma01@example.com",
+      "age": 45,
+      "workExperience": 20,
+      "speciality": "Cardiologist",
+      "location": "Nagpur",
+      "timeSlot": "10:00 AM - 1:00 PM"
+    },
+    {
+      "id": "MLD02",
+      "name": "Dr. Priya Menon",
+      "email": "priyamenon02@example.com",
+      "age": 38,
+      "workExperience": 12,
+      "speciality": "Endocrinologist",
+      "location": "Pune",
+      "timeSlot": "2:00 PM - 5:00 PM"
+    },
+    {
+      "id": "MLD03",
+      "name": "Dr. Ashok Patil",
+      "email": "ashokpatil03@example.com",
+      "age": 50,
+      "workExperience": 25,
+      "speciality": "Pulmonologist",
+      "location": "Nagpur",
+      "timeSlot": "9:00 AM - 12:00 PM"
+    },
+    {
+      "id": "MLD04",
+      "name": "Dr. Sneha Desai",
+      "email": "snehadesai04@example.com",
+      "age": 42,
+      "workExperience": 18,
+      "speciality": "Allergist",
+      "location": "Nagpur",
+      "timeSlot": "11:00 AM - 2:00 PM"
+    },
+    {
+      "id": "MLD05",
+      "name": "Dr. Karan Kapoor",
+      "email": "karankapoor05@example.com",
+      "age": 40,
+      "workExperience": 15,
+      "speciality": "Diabetologist",
+      "location": "Nagpur",
+      "timeSlot": "4:00 PM - 7:00 PM"
+    },
+    {
+      "id": "MLD06",
+      "name": "Dr. Poonam Bhosale",
+      "email": "poonambhosale06@example.com",
+      "age": 35,
+      "workExperience": 10,
+      "speciality": "Dermatologist",
+      "location": "Aurangabad",
+      "timeSlot": "1:00 PM - 4:00 PM"
+    },
+    {
+      "id": "MLD07",
+      "name": "Dr. Rakesh Joshi",
+      "email": "rakeshjoshi07@example.com",
+      "age": 52,
+      "workExperience": 28,
+      "speciality": "Nephrologist",
+      "location": "Nagpur",
+      "timeSlot": "9:00 AM - 11:00 AM"
+    },
+    {
+      "id": "MLD08",
+      "name": "Dr. Meera Kale",
+      "email": "meerakale08@example.com",
+      "age": 37,
+      "workExperience": 14,
+      "speciality": "Pulmonologist",
+      "location": "Nagpur",
+      "timeSlot": "3:00 PM - 6:00 PM"
+    },
+    {
+      "id": "MLD09",
+      "name": "Dr. Shyam Rane",
+      "email": "shyamrane09@example.com",
+      "age": 55,
+      "workExperience": 30,
+      "speciality": "Cardiologist",
+      "location": "Mumbai",
+      "timeSlot": "10:00 AM - 1:00 PM"
+    },
+    {
+      "id": "MLD10",
+      "name": "Dr. Neeta Agrawal",
+      "email": "neetaagrawal10@example.com",
+      "age": 39,
+      "workExperience": 12,
+      "speciality": "Endocrinologist",
+      "location": "Nagpur",
+      "timeSlot": "2:00 PM - 5:00 PM"
+    },
+    {
+      "id": "MLD11",
+      "name": "Dr. Suresh Gaikwad",
+      "email": "sureshgaikwad11@example.com",
+      "age": 48,
+      "workExperience": 18,
+      "speciality": "Allergist",
+      "location": "Nagpur",
+      "timeSlot": "11:00 AM - 2:00 PM"
+    },
+    {
+      "id": "MLD12",
+      "name": "Dr. Rina Dhavale",
+      "email": "rinadhavale12@example.com",
+      "age": 43,
+      "workExperience": 19,
+      "speciality": "Dermatologist",
+      "location": "Nagpur",
+      "timeSlot": "1:00 PM - 4:00 PM"
+    },
+    {
+      "id": "MLD13",
+      "name": "Dr. Mahesh Thakur",
+      "email": "maheshthakur13@example.com",
+      "age": 55,
+      "workExperience": 29,
+      "speciality": "Cardiologist",
+      "location": "Nagpur",
+      "timeSlot": "10:00 AM - 12:00 PM"
+    },
+    {
+      "id": "MLD14",
+      "name": "Dr. Kanchan Joshi",
+      "email": "kanchanjoshi14@example.com",
+      "age": 36,
+      "workExperience": 10,
+      "speciality": "Diabetologist",
+      "location": "Pune",
+      "timeSlot": "3:00 PM - 6:00 PM"
+    },
+    {
+      "id": "MLD15",
+      "name": "Dr. Vinod Kulkarni",
+      "email": "vinodkulkarni15@example.com",
+      "age": 47,
+      "workExperience": 22,
+      "speciality": "Psychiatrist",
+      "location": "Nagpur",
+      "timeSlot": "9:00 AM - 12:00 PM"
+    },
+    {
+      "id": "MLD16",
+      "name": "Dr. Anjana Lokhande",
+      "email": "anjanalokhande16@example.com",
+      "age": 41,
+      "workExperience": 15,
+      "speciality": "Rheumatologist",
+      "location": "Nagpur",
+      "timeSlot": "1:00 PM - 4:00 PM"
+    },
+    {
+      "id": "MLD17",
+      "name": "Dr. Rohit Pawar",
+      "email": "rohitpawar17@example.com",
+      "age": 50,
+      "workExperience": 24,
+      "speciality": "Diabetologist",
+      "location": "Nashik",
+      "timeSlot": "4:00 PM - 7:00 PM"
+    },
+    {
+      "id": "MLD18",
+      "name": "Dr. Shilpa Goyal",
+      "email": "shilpagoyal18@example.com",
+      "age": 34,
+      "workExperience": 8,
+      "speciality": "Pulmonologist",
+      "location": "Nagpur",
+      "timeSlot": "11:00 AM - 2:00 PM"
+    },
+    {
+      "id": "MLD19",
+      "name": "Dr. Rajiv Nair",
+      "email": "rajivnair19@example.com",
+      "age": 45,
+      "workExperience": 17,
+      "speciality": "Allergist",
+      "location": "Nagpur",
+      "timeSlot": "10:00 AM - 1:00 PM"
+    },
+    {
+      "id": "MLD20",
+      "name": "Dr. Rachana Kothari",
+      "email": "rachanakothari20@example.com",
+      "age": 40,
+      "workExperience": 13,
+      "speciality": "Cardiologist",
+      "location": "Nagpur",
+      "timeSlot": "2:00 PM - 5:00 PM"
+    },
+    {
+      "id": "MLD21",
+      "name": "Dr. Vikas Mehta",
+      "email": "vikasmehta21@example.com",
+      "age": 55,
+      "workExperience": 30,
+      "speciality": "Endocrinologist",
+      "location": "Nagpur",
+      "timeSlot": "11:00 AM - 2:00 PM"
+    },
+    {
+      "id": "MLD22",
+      "name": "Dr. Anju Verma",
+      "email": "anjuverma22@example.com",
+      "age": 36,
+      "workExperience": 12,
+      "speciality": "Dermatologist",
+      "location": "Nagpur",
+      "timeSlot": "3:00 PM - 6:00 PM"
+    },
+    {
+      "id": "MLD23",
+      "name": "Dr. Kiran Deshpande",
+      "email": "kirandeshpande23@example.com",
+      "age": 49,
+      "workExperience": 20,
+      "speciality": "Neurologist",
+      "location": "Nagpur",
+      "timeSlot": "10:00 AM - 12:00 PM"
+    },
+    {
+      "id": "MLD24",
+      "name": "Dr. Priyanka Shetty",
+      "email": "priyankashetty24@example.com",
+      "age": 33,
+      "workExperience": 7,
+      "speciality": "Endocrinologist",
+      "location": "Wardha",
+      "timeSlot": "12:00 PM - 3:00 PM"
+    },
+    {
+      "id": "MLD25",
+      "name": "Dr. Anil Sutar",
+      "email": "anilsutar25@example.com",
+      "age": 46,
+      "workExperience": 19,
+      "speciality": "Rheumatologist",
+      "location": "Nagpur",
+      "timeSlot": "9:00 AM - 11:00 AM"
+    },
+    {
+      "id": "MLD26",
+      "name": "Dr. Sandhya Thakre",
+      "email": "sandhyathakre26@example.com",
+      "age": 39,
+      "workExperience": 14,
+      "speciality": "Hematologist",
+      "location": "Nagpur",
+      "timeSlot": "1:00 PM - 4:00 PM"
+    },
+    {
+      "id": "MLD27",
+      "name": "Dr. Ramesh Borkar",
+      "email": "rameshborkar27@example.com",
+      "age": 60,
+      "workExperience": 34,
+      "speciality": "Cardiologist",
+      "location": "Nagpur",
+      "timeSlot": "2:00 PM - 5:00 PM"
+    },
+    {
+      "id": "MLD28",
+      "name": "Dr. Manisha Kale",
+      "email": "manishakale28@example.com",
+      "age": 52,
+      "workExperience": 27,
+      "speciality": "Orthopedic Surgeon",
+      "location": "Nagpur",
+      "timeSlot": "10:00 AM - 12:00 PM"
+    },
+    {
+      "id": "MLD29",
+      "name": "Dr. Nikhil Kamat",
+      "email": "nikhilkamat29@example.com",
+      "age": 35,
+      "workExperience": 10,
+      "speciality": "Allergist",
+      "location": "Nagpur",
+      "timeSlot": "3:00 PM - 6:00 PM"
+    },
+    {
+      "id": "MLD30",
+      "name": "Dr. Kavita Pandey",
+      "email": "kavitapandey30@example.com",
+      "age": 44,
+      "workExperience": 18,
+      "speciality": "Cardiologist",
+      "location": "Nagpur",
+      "timeSlot": "11:00 AM - 2:00 PM"
+    }
+  ]
+}

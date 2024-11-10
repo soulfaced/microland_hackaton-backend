@@ -1,0 +1,332 @@
+{
+  "medications": [
+    {
+      "condition": "Hypertension",
+      "medication": [
+        {
+          "name": "Amlodipine",
+          "dosage": "5 mg",
+          "frequency": "Once daily",
+          "time": "Morning",
+          "beforeMeal": false
+        },
+        {
+          "name": "Losartan",
+          "dosage": "50 mg",
+          "frequency": "Once daily",
+          "time": "Morning",
+          "beforeMeal": false
+        }
+      ]
+    },
+    {
+      "condition": "Diabetes",
+      "medication": [
+        {
+          "name": "Metformin",
+          "dosage": "500 mg",
+          "frequency": "Twice daily",
+          "time": "Morning and Evening",
+          "beforeMeal": true
+        },
+        {
+          "name": "Glipizide",
+          "dosage": "5 mg",
+          "frequency": "Once daily",
+          "time": "Morning",
+          "beforeMeal": true
+        }
+      ]
+    },
+    {
+      "condition": "Asthma",
+      "medication": [
+        {
+          "name": "Albuterol Inhaler",
+          "dosage": "2 puffs",
+          "frequency": "As needed",
+          "time": "Anytime symptoms occur",
+          "beforeMeal": false
+        },
+        {
+          "name": "Montelukast",
+          "dosage": "10 mg",
+          "frequency": "Once daily",
+          "time": "Evening",
+          "beforeMeal": false
+        }
+      ]
+    },
+    {
+      "condition": "Allergy to penicillin",
+      "medication": [
+        {
+          "name": "Antihistamine (Loratadine)",
+          "dosage": "10 mg",
+          "frequency": "Once daily",
+          "time": "Morning",
+          "beforeMeal": false
+        },
+        {
+          "name": "Epinephrine injection",
+          "dosage": "0.3 mg",
+          "frequency": "As needed for severe allergic reactions",
+          "time": "Immediately",
+          "beforeMeal": false
+        }
+      ]
+    },
+    {
+      "condition": "Chronic back pain",
+      "medication": [
+        {
+          "name": "Ibuprofen",
+          "dosage": "400 mg",
+          "frequency": "Every 6 hours as needed",
+          "time": "Anytime pain occurs",
+          "beforeMeal": false
+        },
+        {
+          "name": "Acetaminophen",
+          "dosage": "500 mg",
+          "frequency": "Every 4-6 hours as needed",
+          "time": "Anytime pain occurs",
+          "beforeMeal": false
+        }
+      ]
+    },
+    {
+      "condition": "Migraines",
+      "medication": [
+        {
+          "name": "Sumatriptan",
+          "dosage": "50 mg",
+          "frequency": "As needed",
+          "time": "At onset of migraine",
+          "beforeMeal": false
+        },
+        {
+          "name": "Propranolol",
+          "dosage": "40 mg",
+          "frequency": "Once daily",
+          "time": "Evening",
+          "beforeMeal": false
+        }
+      ]
+    },
+    {
+      "condition": "Kidney stones",
+      "medication": [
+        {
+          "name": "Tamsulosin",
+          "dosage": "0.4 mg",
+          "frequency": "Once daily",
+          "time": "Evening",
+          "beforeMeal": false
+        },
+        {
+          "name": "Ibuprofen",
+          "dosage": "400 mg",
+          "frequency": "Every 6 hours as needed for pain",
+          "time": "Anytime pain occurs",
+          "beforeMeal": false
+        }
+      ]
+    },
+    {
+      "condition": "Heart disease",
+      "medication": [
+        {
+          "name": "Atorvastatin",
+          "dosage": "20 mg",
+          "frequency": "Once daily",
+          "time": "Evening",
+          "beforeMeal": false
+        },
+        {
+          "name": "Aspirin",
+          "dosage": "81 mg",
+          "frequency": "Once daily",
+          "time": "Morning",
+          "beforeMeal": false
+        }
+      ]
+    },
+    {
+      "condition": "Thyroid issues",
+      "medication": [
+        {
+          "name": "Levothyroxine",
+          "dosage": "50 mcg",
+          "frequency": "Once daily",
+          "time": "Morning",
+          "beforeMeal": true
+        }
+      ]
+    },
+    {
+      "condition": "Arthritis",
+      "medication": [
+        {
+          "name": "Methotrexate",
+          "dosage": "10 mg",
+          "frequency": "Once weekly",
+          "time": "Morning",
+          "beforeMeal": false
+        },
+        {
+          "name": "Naproxen",
+          "dosage": "500 mg",
+          "frequency": "Twice daily",
+          "time": "Morning and Evening",
+          "beforeMeal": false
+        }
+      ]
+    },
+    {
+      "condition": "Eczema",
+      "medication": [
+        {
+          "name": "Hydrocortisone cream",
+          "dosage": "Apply thin layer",
+          "frequency": "Twice daily",
+          "time": "Morning and Evening",
+          "beforeMeal": false
+        },
+        {
+          "name": "Cetirizine",
+          "dosage": "10 mg",
+          "frequency": "Once daily",
+          "time": "Morning",
+          "beforeMeal": false
+        }
+      ]
+    },
+    {
+      "condition": "Type 2 diabetes",
+      "medication": [
+        {
+          "name": "Metformin",
+          "dosage": "500 mg",
+          "frequency": "Twice daily",
+          "time": "Morning and Evening",
+          "beforeMeal": true
+        },
+        {
+          "name": "Glyburide",
+          "dosage": "5 mg",
+          "frequency": "Once daily",
+          "time": "Morning",
+          "beforeMeal": true
+        }
+      ]
+    },
+    {
+      "condition": "Anxiety",
+      "medication": [
+        {
+          "name": "Sertraline",
+          "dosage": "50 mg",
+          "frequency": "Once daily",
+          "time": "Morning",
+          "beforeMeal": false
+        },
+        {
+          "name": "Alprazolam",
+          "dosage": "0.5 mg",
+          "frequency": "As needed",
+          "time": "Anytime symptoms occur",
+          "beforeMeal": false
+        }
+      ]
+    },
+    {
+      "condition": "High cholesterol",
+      "medication": [
+        {
+          "name": "Atorvastatin",
+          "dosage": "10 mg",
+          "frequency": "Once daily",
+          "time": "Evening",
+          "beforeMeal": false
+        }
+      ]
+    },
+    {
+      "condition": "Allergy to pollen",
+      "medication": [
+        {
+          "name": "Loratadine",
+          "dosage": "10 mg",
+          "frequency": "Once daily",
+          "time": "Morning",
+          "beforeMeal": false
+        },
+        {
+          "name": "Fluticasone nasal spray",
+          "dosage": "2 sprays per nostril",
+          "frequency": "Once daily",
+          "time": "Morning",
+          "beforeMeal": false
+        }
+      ]
+    },
+    {
+      "condition": "Anemia",
+      "medication": [
+        {
+          "name": "Ferrous sulfate",
+          "dosage": "325 mg",
+          "frequency": "Once daily",
+          "time": "Morning",
+          "beforeMeal": true
+        },
+        {
+          "name": "Vitamin C",
+          "dosage": "500 mg",
+          "frequency": "Once daily",
+          "time": "Morning",
+          "beforeMeal": false
+        }
+      ]
+    },
+    {
+      "condition": "Osteoporosis",
+      "medication": [
+        {
+          "name": "Alendronate",
+          "dosage": "70 mg",
+          "frequency": "Once weekly",
+          "time": "Morning",
+          "beforeMeal": true
+        },
+        {
+          "name": "Calcium and Vitamin D",
+          "dosage": "500 mg calcium, 800 IU vitamin D",
+          "frequency": "Twice daily",
+          "time": "Morning and Evening",
+          "beforeMeal": false
+        }
+      ]
+    },
+    {
+      "condition": "Allergy to antibiotics",
+      "medication": [
+        {
+          "name": "Diphenhydramine",
+          "dosage": "25 mg",
+          "frequency": "As needed",
+          "time": "Anytime symptoms occur",
+          "beforeMeal": false
+        },
+        {
+          "name": "Epinephrine injection",
+          "dosage": "0.3 mg",
+          "frequency": "As needed for severe allergic reactions",
+          "time": "Immediately",
+          "beforeMeal": false
+        }
+      ]
+    }
+  ]
+}

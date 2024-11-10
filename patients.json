@@ -1,0 +1,409 @@
+{
+  "patients": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "johndoe@example.com",
+      "age": 30,
+      "gender": "male",
+      "medicalHistory": ["hypertension", "diabetes"],
+      "location": "Mumbai"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "janesmith@example.com",
+      "age": 45,
+      "gender": "female",
+      "medicalHistory": ["asthma", "allergy to penicillin"],
+      "location": "Pune"
+    },
+    {
+      "id": 3,
+      "name": "Amit Patil",
+      "email": "amitpatil@example.com",
+      "age": 52,
+      "gender": "male",
+      "medicalHistory": ["hypertension", "chronic back pain"],
+      "location": "Nagpur"
+    },
+    {
+      "id": 4,
+      "name": "Priya Sharma",
+      "email": "priyasharma@example.com",
+      "age": 29,
+      "gender": "female",
+      "medicalHistory": ["migraines"],
+      "location": "Thane"
+    },
+    {
+      "id": 5,
+      "name": "Ravi Deshmukh",
+      "email": "ravideshmukh@example.com",
+      "age": 36,
+      "gender": "male",
+      "medicalHistory": ["diabetes"],
+      "location": "Nashik"
+    },
+    {
+      "id": 6,
+      "name": "Sneha Kale",
+      "email": "snehakale@example.com",
+      "age": 40,
+      "gender": "female",
+      "medicalHistory": ["arthritis"],
+      "location": "Aurangabad"
+    },
+    {
+      "id": 7,
+      "name": "Rajesh Shinde",
+      "email": "rajeshshinde@example.com",
+      "age": 55,
+      "gender": "male",
+      "medicalHistory": ["hypertension", "kidney stones"],
+      "location": "Solapur"
+    },
+    {
+      "id": 8,
+      "name": "Neha Jadhav",
+      "email": "nehajadhav@example.com",
+      "age": 27,
+      "gender": "female",
+      "medicalHistory": ["asthma"],
+      "location": "Kolhapur"
+    },
+    {
+      "id": 9,
+      "name": "Manoj Kulkarni",
+      "email": "manojkulkarni@example.com",
+      "age": 63,
+      "gender": "male",
+      "medicalHistory": ["heart disease"],
+      "location": "Jalgaon"
+    },
+    {
+      "id": 10,
+      "name": "Shalini Joshi",
+      "email": "shalinijoshi@example.com",
+      "age": 38,
+      "gender": "female",
+      "medicalHistory": ["thyroid issues"],
+      "location": "Satara"
+    },
+    {
+      "id": 11,
+      "name": "Vikas More",
+      "email": "vikasmore@example.com",
+      "age": 41,
+      "gender": "male",
+      "medicalHistory": ["allergy to pollen"],
+      "location": "Latur"
+    },
+    {
+      "id": 12,
+      "name": "Madhuri Gawande",
+      "email": "madhurigawande@example.com",
+      "age": 34,
+      "gender": "female",
+      "medicalHistory": ["eczema"],
+      "location": "Amravati"
+    },
+    {
+      "id": 13,
+      "name": "Anil Kadam",
+      "email": "anilkadam@example.com",
+      "age": 47,
+      "gender": "male",
+      "medicalHistory": ["hypertension"],
+      "location": "Beed"
+    },
+    {
+      "id": 14,
+      "name": "Pooja Naik",
+      "email": "poonanaik@example.com",
+      "age": 32,
+      "gender": "female",
+      "medicalHistory": ["type 2 diabetes"],
+      "location": "Ratnagiri"
+    },
+    {
+      "id": 15,
+      "name": "Vivek Khedekar",
+      "email": "vivekkhedekar@example.com",
+      "age": 29,
+      "gender": "male",
+      "medicalHistory": ["migraine", "anxiety"],
+      "location": "Akola"
+    },
+    {
+      "id": 16,
+      "name": "Rekha Pawar",
+      "email": "rekhapawar@example.com",
+      "age": 50,
+      "gender": "female",
+      "medicalHistory": ["arthritis", "hypertension"],
+      "location": "Chandrapur"
+    },
+    {
+      "id": 17,
+      "name": "Suresh Gaikwad",
+      "email": "sureshgaikwad@example.com",
+      "age": 56,
+      "gender": "male",
+      "medicalHistory": ["type 1 diabetes"],
+      "location": "Yavatmal"
+    },
+    {
+      "id": 18,
+      "name": "Anjali Desai",
+      "email": "anjalidesai@example.com",
+      "age": 23,
+      "gender": "female",
+      "medicalHistory": ["asthma"],
+      "location": "Dhule"
+    },
+    {
+      "id": 19,
+      "name": "Rohan Chavan",
+      "email": "rohanchavan@example.com",
+      "age": 28,
+      "gender": "male",
+      "medicalHistory": ["allergy to dust"],
+      "location": "Ahmednagar"
+    },
+    {
+      "id": 20,
+      "name": "Sapna Bhonsle",
+      "email": "sapnabhonsle@example.com",
+      "age": 37,
+      "gender": "female",
+      "medicalHistory": ["hypertension"],
+      "location": "Sangli"
+    },
+    {
+      "id": 21,
+      "name": "Abhay Lokhande",
+      "email": "abhaylokhande@example.com",
+      "age": 42,
+      "gender": "male",
+      "medicalHistory": ["high cholesterol"],
+      "location": "Osmanabad"
+    },
+    {
+      "id": 22,
+      "name": "Meera Phadke",
+      "email": "meeraphadke@example.com",
+      "age": 31,
+      "gender": "female",
+      "medicalHistory": ["asthma", "eczema"],
+      "location": "Nanded"
+    },
+    {
+      "id": 23,
+      "name": "Sameer Salunkhe",
+      "email": "sameersalunkhe@example.com",
+      "age": 40,
+      "gender": "male",
+      "medicalHistory": ["migraine"],
+      "location": "Gondia"
+    },
+    {
+      "id": 24,
+      "name": "Nisha Gokhale",
+      "email": "nishagokhale@example.com",
+      "age": 39,
+      "gender": "female",
+      "medicalHistory": ["thyroid issues", "hypertension"],
+      "location": "Wardha"
+    },
+    {
+      "id": 25,
+      "name": "Prakash Wagh",
+      "email": "prakashwagh@example.com",
+      "age": 33,
+      "gender": "male",
+      "medicalHistory": ["arthritis"],
+      "location": "Buldhana"
+    },
+    {
+      "id": 26,
+      "name": "Kiran Ingle",
+      "email": "kiraningle@example.com",
+      "age": 26,
+      "gender": "female",
+      "medicalHistory": ["anemia"],
+      "location": "Parbhani"
+    },
+    {
+      "id": 27,
+      "name": "Sunil Borkar",
+      "email": "sunilborkar@example.com",
+      "age": 58,
+      "gender": "male",
+      "medicalHistory": ["heart disease"],
+      "location": "Washim"
+    },
+    {
+      "id": 28,
+      "name": "Leela Pendse",
+      "email": "leelapendse@example.com",
+      "age": 65,
+      "gender": "female",
+      "medicalHistory": ["osteoporosis"],
+      "location": "Hingoli"
+    },
+    {
+      "id": 29,
+      "name": "Nilesh Mhatre",
+      "email": "nileshmhatre@example.com",
+      "age": 35,
+      "gender": "male",
+      "medicalHistory": ["allergy to antibiotics"],
+      "location": "Sindhudurg"
+    },
+    {
+      "id": 30,
+      "name": "Komal Kulkarni",
+      "email": "komalkulkarni@example.com",
+      "age": 43,
+      "gender": "female",
+      "medicalHistory": ["hypertension", "high cholesterol"],
+      "location": "Gadchiroli"
+    },
+    {
+      "id": 31,
+      "name": "Nikhil Joshi",
+      "email": "nikhiljoshi@example.com",
+      "age": 34,
+      "gender": "male",
+      "medicalHistory": ["hypertension"],
+      "location": "Nagpur"
+    },
+    {
+      "id": 32,
+      "name": "Pooja Rane",
+      "email": "poojarane@example.com",
+      "age": 29,
+      "gender": "female",
+      "medicalHistory": ["migraine"],
+      "location": "Nagpur"
+    },
+    {
+      "id": 33,
+      "name": "Arun Deshpande",
+      "email": "arundeshpande@example.com",
+      "age": 55,
+      "gender": "male",
+      "medicalHistory": ["diabetes"],
+      "location": "Nagpur"
+    },
+    {
+      "id": 34,
+      "name": "Smita Kharat",
+      "email": "smitakharat@example.com",
+      "age": 60,
+      "gender": "female",
+      "medicalHistory": ["arthritis"],
+      "location": "Nagpur"
+    },
+    {
+      "id": 35,
+      "name": "Akash Gaikwad",
+      "email": "akashgaikwad@example.com",
+      "age": 47,
+      "gender": "male",
+      "medicalHistory": ["hypertension", "heart disease"],
+      "location": "Nagpur"
+    },
+    {
+      "id": 36,
+      "name": "Radha Bhosale",
+      "email": "radhabhosale@example.com",
+      "age": 27,
+      "gender": "female",
+      "medicalHistory": ["asthma"],
+      "location": "Nagpur"
+    },
+    {
+      "id": 37,
+      "name": "Pranav Kulkarni",
+      "email": "pranavkulkarni@example.com",
+      "age": 32,
+      "gender": "male",
+      "medicalHistory": ["allergy to dust"],
+      "location": "Nagpur"
+    },
+    {
+      "id": 38,
+      "name": "Sheetal Shinde",
+      "email": "sheetalshinde@example.com",
+      "age": 49,
+      "gender": "female",
+      "medicalHistory": ["thyroid issues"],
+      "location": "Nagpur"
+    },
+    {
+      "id": 39,
+      "name": "Yogesh Pawar",
+      "email": "yogeshpawar@example.com",
+      "age": 56,
+      "gender": "male",
+      "medicalHistory": ["high cholesterol"],
+      "location": "Nagpur"
+    },
+    {
+      "id": 40,
+      "name": "Sarika Deshmukh",
+      "email": "sarikadeshmukh@example.com",
+      "age": 42,
+      "gender": "female",
+      "medicalHistory": ["eczema"],
+      "location": "Nagpur"
+    },
+    {
+      "id": 41,
+      "name": "Vijay Kale",
+      "email": "vijaykale@example.com",
+      "age": 50,
+      "gender": "male",
+      "medicalHistory": ["hypertension"],
+      "location": "Nagpur"
+    },
+    {
+      "id": 42,
+      "name": "Megha Joshi",
+      "email": "meghajoshi@example.com",
+      "age": 35,
+      "gender": "female",
+      "medicalHistory": ["anxiety"],
+      "location": "Nagpur"
+    },
+    {
+      "id": 43,
+      "name": "Raj Patil",
+      "email": "rajpatil@example.com",
+      "age": 29,
+      "gender": "male",
+      "medicalHistory": ["migraines"],
+      "location": "Nagpur"
+    },
+    {
+      "id": 44,
+      "name": "Aishwarya Naik",
+      "email": "aishwaryanaik@example.com",
+      "age": 28,
+      "gender": "female",
+      "medicalHistory": ["asthma"],
+      "location": "Nagpur"
+    },
+    {
+      "id": 45,
+      "name": "Vinit Deshmukh",
+      "email": "vinitdeshmukh@example.com",
+      "age": 60,
+      "gender": "male",
+      "medicalHistory": ["diabetes", "high cholesterol"],
+      "location": "Nagpur"
+    }
+  ]
+}
