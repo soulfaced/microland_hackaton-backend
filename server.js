@@ -14,12 +14,26 @@ const Doctor = require('./models/Doctor');
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Set up CORS to allow requests from the frontend with credentials
+const allowedOrigins = [
+  'https://chatbot-frontend-soulfaceds-projects.vercel.app',
+  'http://localhost:3001'
+];
+
 app.use(cors({
-    origin: 'https://chatbot-frontend-soulfaceds-projects.vercel.app', // Update to match your frontend URL
-    methods: ['GET', 'POST'],
-    credentials: true // Allows cookies to be sent with requests
+  origin: (origin, callback) => {
+      // Allow requests with no origin (like mobile apps or curl requests)
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.includes(origin)) {
+          callback(null, origin); // Allow this origin
+      } else {
+          callback(new Error('Not allowed by CORS')); // Deny other origins
+      }
+  },
+  methods: ['GET', 'POST'],
+  credentials: true
 }));
+
 
 // Enable trust proxy for secure cookies behind a proxy (e.g., Nginx, Heroku)
 app.set('trust proxy', 1);
