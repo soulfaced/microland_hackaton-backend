@@ -233,9 +233,12 @@ A:`;
         const result = await model.generateContent(prompt);
         const answer = result.response.text();
 
+
         chatHistory.push({ question, answer });
 
-        await saveChatHistory(patient, chatHistory);
+        // await saveChatHistory(patient, chatHistory);
+        await saveChatHistory(req.session.email, chatHistory);
+
 
         res.status(200).json({
             answer,
@@ -256,12 +259,12 @@ A:`;
 //save chat history
 const saveChatHistory = async (patientEmail, chatMessages) => {
   try {
-      // Find or create a new chat history document for the patient
-      let chatHistoryDoc = await PatientChatHistory.findOne({ patient });
+      // Find or create a new chat history document for the patient by their email
+      let chatHistoryDoc = await PatientChatHistory.findOne({ patientEmail });
       if (!chatHistoryDoc) {
           // Create a new chat history document if none exists
           chatHistoryDoc = new PatientChatHistory({
-              patient,
+              patientEmail,
               chatSessions: [{
                   sessionId: uuidv4(),
                   messages: chatMessages
@@ -279,6 +282,7 @@ const saveChatHistory = async (patientEmail, chatMessages) => {
       console.error('Error saving chat history:', error);
   }
 };
+
 
 
 // Save an appointment
