@@ -159,6 +159,49 @@ app.post('/api/doctors', async (req, res) => {
     }
 });
 
+// Helper function to check if the doctor has the specified time slot available
+const checkAvailability = (doctor, requestedTimeSlot) => {
+  return !doctor.appointments || !doctor.appointments.includes(requestedTimeSlot);
+};
+
+// Assign a doctor to a patient if a time slot is free
+app.post('/assign-doctor', async (req, res) => {
+  const { patientId, condition, location, requestedTimeSlot } = req.body;
+
+  try {
+      // Find doctors with matching specialty and location
+      const doctors = await Doctor.find({ speciality: condition, location });
+
+      // Filter doctors who are available at the requested time slot
+      const availableDoctor = doctors.find(doctor => checkAvailability(doctor, requestedTimeSlot));
+
+      if (!availableDoctor) {
+          return res.status(400).json({ error: 'No doctors available at the requested time slot.' });
+      }
+
+      // Add the time slot to the doctor's list of appointments
+      if (!availableDoctor.appointments) {
+          availableDoctor.appointments = [];
+      }
+      availableDoctor.appointments.push(requestedTimeSlot);
+      await availableDoctor.save();
+
+      // Respond with the assigned doctor details
+      res.status(200).json({
+          message: 'Doctor assigned successfully',
+          doctor: {
+              name: availableDoctor.name,
+              speciality: availableDoctor.speciality,
+              location: availableDoctor.location,
+              timeSlot: requestedTimeSlot
+          }
+      });
+  } catch (error) {
+      console.error('Error assigning doctor:', error);
+      res.status(500).json({ error: 'An error occurred while assigning the doctor' });
+  }
+});
+
 
 // Chatbot endpoint
 app.post('/ask', async (req, res) => {
