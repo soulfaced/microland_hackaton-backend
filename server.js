@@ -23,8 +23,14 @@ app.use(session({
     secret: 'your-secret-key',
     resave: false,
     saveUninitialized: false,
-    cookie: { secure: false } // For development; set to true in production with HTTPS
+    cookie: { 
+        secure: true,                // Ensures cookies are sent over HTTPS only
+        httpOnly: true,              // Prevents client-side JavaScript from accessing the cookie
+        sameSite: 'lax',             // Choose 'strict' or 'lax' based on your requirements
+        maxAge: 1000 * 60 * 60 * 24  // Set an expiration time, e.g., 24 hours
+    }
 }));
+
 
 const genAI = new GoogleGenerativeAI('AIzaSyD9t12PoKOLSARse-P2OHXcAyM2ClRfRQU');
 const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
