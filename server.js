@@ -26,15 +26,15 @@ app.set('trust proxy', 1);
 
 // Session setup
 app.use(session({
-    secret: process.env.SESSION_SECRET || 'your-secret-key', // Set a secure secret in .env
-    resave: false,
-    saveUninitialized: false,
-    cookie: { 
-        secure: true, // Only secure cookies in production (requires HTTPS)
-        httpOnly: true, // Prevents client-side JS from accessing cookies
-        sameSite: 'lax', // Use 'lax' for cross-site cookies
-        maxAge: 1000 * 60 * 60 * 24 // 24 hours expiration
-    }
+  secret: process.env.SESSION_SECRET || 'your-secret-key',
+  resave: false,
+  saveUninitialized: false,
+  cookie: { 
+      secure: true, // Ensure this is set to true for HTTPS
+      httpOnly: true, 
+      sameSite: 'none', // Allows cookies to be sent across different origins
+      maxAge: 1000 * 60 * 60 * 24 // 24 hours expiration
+  }
 }));
 
 // Middleware
@@ -57,17 +57,34 @@ const medicine = fs.readFileSync('./medication.json', 'utf-8');
 const getPatientInfo = (email) => patientData.patients.find(patient => patient.email === email);
 
 // Login route
-app.post('/login', (req, res) => {
-    const { email } = req.body;
-    const patient = getPatientInfo(email);
+// app.post('/login', (req, res) => {
+//     const { email } = req.body;
+//     const patient = getPatientInfo(email);
 
-    if (patient) {
-        req.session.email = email; // Save email to session
-        res.status(200).json({ message: 'Login successful', patient });
-    } else {
-        res.status(401).json({ error: 'Unauthorized: Email not found' });
-    }
+//     if (patient) {
+//         req.session.email = email; // Save email to session
+//         res.status(200).json({ message: 'Login successful', patient });
+//     } else {
+//         res.status(401).json({ error: 'Unauthorized: Email not found' });
+//     }
+// });
+app.post('/login', (req, res) => {
+  const { email } = req.body;
+  const patient = getPatientInfo(email);
+
+  if (patient) {
+      req.session.email = email;
+      req.session.save((err) => {
+          if (err) {
+              return res.status(500).json({ error: 'Failed to save session' });
+          }
+          res.status(200).json({ message: 'Login successful', patient });
+      });
+  } else {
+      res.status(401).json({ error: 'Unauthorized: Email not found' });
+  }
 });
+
 
 // Logout route
 app.post('/logout', (req, res) => {
