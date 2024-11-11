@@ -11,10 +11,6 @@ require('dotenv').config();
 const Patient = require('./models/Patient');
 const Doctor = require('./models/Doctor');
 
-const PatientChatHistory = require('./models/PatientChatHistory');
-const { v4: uuidv4 } = require('uuid'); // For generating unique session IDs
-
-
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -45,7 +41,7 @@ app.set('trust proxy', 1);
 
 // Session setup
 app.use(session({
-  secret: process.env.SESSION_SECRET || 'H23sjjnaf-jsjnjna-432uyu221sdfaw2',
+  secret: process.env.SESSION_SECRET || 'your-secret-key',
   resave: false,
   saveUninitialized: false,
   cookie: { 
@@ -159,7 +155,6 @@ app.post('/api/doctors', async (req, res) => {
     }
 });
 
-
 // Chatbot endpoint
 app.post('/ask', async (req, res) => {
     if (!req.session.email) {
@@ -190,18 +185,6 @@ app.post('/ask', async (req, res) => {
         assignedDoctor = availableDoctors[0];
         req.session.assignedDoctor = assignedDoctor;
     }
-    let previousChatHistory = [];
-    try {
-        const chatHistoryDoc = await PatientChatHistory.findOne({ patientEmail });
-        if (chatHistoryDoc) {
-            // Flatten all previous chat sessions into a single array of messages
-            previousChatHistory = chatHistoryDoc.chatSessions.flatMap(session => session.messages);
-        }
-    } catch (error) {
-        console.error('Error retrieving chat history:', error);
-    }
-    const formattedHistory = previousChatHistory.map((entry, index) => `Q${index + 1}: ${entry.question}\nA${index + 1}: ${entry.answer}`).join('\n');
-
 
     const prompt = `You're a healthcare-focused AI assistant specializing in providing detailed medical guidance, including information on diseases, home remedies, appointment scheduling, emergency responses, symptoms analysis, diet, and health tips. talk polietly and provide the best possible solution to the patient. take name of pateint where ever required.
 
@@ -212,9 +195,6 @@ app.post('/ask', async (req, res) => {
     and find doctors that can treat the patient and is from the same location, give the list of doctors .
 
     if user asks for the medicne and stuff you can take help from ${medicine} to provide the answers tot the patient and also help him create a proper meal plan as per his condition.
-    take help from this history:
-    Previous Conversation History:
-    ${formattedHistory}
 
 Patient Information:
 Name: ${patient.name}
@@ -235,8 +215,6 @@ A:`;
 
         chatHistory.push({ question, answer });
 
-        await saveChatHistory(patientEmail, chatHistory);
-
         res.status(200).json({
             answer,
             detectedConditions,
@@ -252,34 +230,6 @@ A:`;
         res.status(500).json({ error: 'Error generating content' });
     }
 });
-
-//save chat history
-const saveChatHistory = async (patientEmail, chatMessages) => {
-  try {
-      // Find or create a new chat history document for the patient
-      let chatHistoryDoc = await PatientChatHistory.findOne({ patientEmail });
-      if (!chatHistoryDoc) {
-          // Create a new chat history document if none exists
-          chatHistoryDoc = new PatientChatHistory({
-              patientEmail,
-              chatSessions: [{
-                  sessionId: uuidv4(),
-                  messages: chatMessages
-              }]
-          });
-      } else {
-          // Update the latest chat session with the new message
-          const currentSession = chatHistoryDoc.chatSessions[chatHistoryDoc.chatSessions.length - 1];
-          currentSession.messages = chatMessages;
-      }
-
-      await chatHistoryDoc.save();
-      console.log('Chat history saved successfully');
-  } catch (error) {
-      console.error('Error saving chat history:', error);
-  }
-};
-
 
 // Save an appointment
 app.post('/save-appointment', (req, res) => {
