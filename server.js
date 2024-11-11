@@ -16,7 +16,7 @@ const port = process.env.PORT || 3000;
 
 // Set up CORS to allow requests from the frontend with credentials
 app.use(cors({
-    origin: 'https://chatbot-frontend-kuiqd10g4-soulfaceds-projects.vercel.app', // Update to match your frontend URL
+    origin: 'https://chatbot-frontend-soulfaced-soulfaceds-projects.vercel.app', // Update to match your frontend URL
     methods: ['GET', 'POST'],
     credentials: true // Allows cookies to be sent with requests
 }));
