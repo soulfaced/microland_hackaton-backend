@@ -6,6 +6,8 @@ const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
 require('dotenv').config();
+const Patient = require('./models/Patient');
+const Doctor = require('./models/Doctor');
 
 const app = express();
 const port = 3000;
@@ -70,6 +72,68 @@ app.get('/api/doctors', async (req, res) => {
     } catch (error) {
       console.error('Error fetching doctors:', error);
       res.status(500).json({ error: 'An error occurred while fetching doctors' });
+    }
+  });
+
+  app.get('/api/patients', async (req, res) => {
+    try {
+      const patients = await Patient.find();
+      res.status(200).json(patients);
+    } catch (error) {
+      console.error('Error fetching patients:', error);
+      res.status(500).json({ error: 'An error occurred while fetching patients' });
+    }
+  });
+
+// POST Route to add a new patient
+app.post('/api/patients', async (req, res) => {
+    const { id, name, email, age, gender, medicalHistory, location } = req.body;
+  
+    try {
+      // Create a new patient document
+      const newPatient = new Patient({
+        id,
+        name,
+        email,
+        age,
+        gender,
+        medicalHistory,
+        location
+      });
+  
+      // Save the patient to the database
+      await newPatient.save();
+  
+      res.status(201).json({ message: 'Patient added successfully', patient: newPatient });
+    } catch (error) {
+      console.error('Error adding patient:', error);
+      res.status(500).json({ error: 'An error occurred while adding the patient' });
+    }
+  });
+
+  app.post('/api/doctors', async (req, res) => {
+    const { id, name, email, age, workExperience, speciality, location, timeSlot } = req.body;
+  
+    try {
+      // Create a new doctor document
+      const newDoctor = new Doctor({
+        id,
+        name,
+        email,
+        age,
+        workExperience,
+        speciality,
+        location,
+        timeSlot
+      });
+  
+      // Save the doctor to the database
+      await newDoctor.save();
+  
+      res.status(201).json({ message: 'Doctor added successfully', doctor: newDoctor });
+    } catch (error) {
+      console.error('Error adding doctor:', error);
+      res.status(500).json({ error: 'An error occurred while adding the doctor' });
     }
   });
 
@@ -221,18 +285,6 @@ mongoose.connect('mongodb://padwekarsanchit:4Rasrdkfv2nTnusp@cluster0-shard-00-0
 .catch(err => console.error('Could not connect to MongoDB:', err));
 
 
-const seedDatabase = async () => {
-    try {
-      await Doctor.insertMany(doctorData.doctors);
-      console.log('Doctors data has been successfully added to the database');
-    } catch (error) {
-      console.error('Error inserting data:', error);
-    } finally {
-      mongoose.connection.close();
-    }
-  };
-
-seedDatabase();
 
 
 app.listen(port, () => {
